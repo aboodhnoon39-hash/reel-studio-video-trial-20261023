@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: reel-studio-video-trial
+    runtime: docker
+    plan: free
+    dockerfilePath: ./scripts/cloud-service/Dockerfile
+    autoDeploy: false
+    healthCheckPath: /health
+    envVars:
+      - key: CLOUD_ADMIN_TOKEN
+        generateValue: true
